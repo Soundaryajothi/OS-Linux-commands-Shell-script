@@ -42,23 +42,57 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
-
-
+```
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
+```
 
 cat < file2
 ## OUTPUT
-
-
+```
+anil aggarwal
+barun sengupta
+c.k. shukla
+lalit chowdury
+s.n. dasgupta
+```
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
+```
+file1 file2 differ: char 1, line 1
+```
  
 comm file1 file2
  ## OUTPUT
+ ```
+anil aggarwal
+        barun sengupta
+        c.k. shukla
+chanchal singhvi
+c.k. shukla
+        lalit chowdury
+                s.n. dasgupta
+sumit chakrobarty
+```
 
  
 diff file1 file2
 ## OUTPUT
+```
+--- file1
++++ file2
+@@ -1,4 +1,5 @@
+-chanchal singhvi
++anil aggarwal
++barun sengupta
+ c.k. shukla
++lalit chowdury
+ s.n. dasgupta
+-sumit chakrobarty
+```
 
 
 #Filters
@@ -82,17 +116,30 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
+```
+Hel
+Thi
+```
 
 
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
-
+```
+1001
+1002
+1003
+```
 
 
 cut -d "|" -f 2 file22
 ## OUTPUT
+```
+Ram
+ tom
+ Joe
+```
 
 
 cat < newfile 
@@ -107,39 +154,50 @@ hello world
  
 grep Hello newfile 
 ## OUTPUT
+```
+Hello world
+```
 
 
 
 grep hello newfile 
 ## OUTPUT
+```
+hello world
+```
 
 
 
 
 grep -v hello newfile 
 ## OUTPUT
+```
+Hello world
+```
 
 
 
 cat newfile | grep -i "hello"
 ## OUTPUT
+```
+Hello world
+hello world
+```
 
 
 
 
 cat newfile | grep -i -c "hello"
 ## OUTPUT
-
-
-
-
-grep -R ubuntu /etc
-## OUTPUT
-
-
-
+```
+2
+```
 grep -w -n world newfile   
 ## OUTPUT
+```
+1:Hello world
+2:hello world
+```
 
 
 cat < newfile 
@@ -163,59 +221,106 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
+```
+Hello world
+hello world
+```
 
 
 
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
+```
+Hello world
+hello world
+```
 
 
 
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
-
+```
+Hello world
+hello world
+```
 
 
 
 egrep '(^hello)' newfile 
 ## OUTPUT
+```
+hello world
+```
 
 
 
 egrep '(world$)' newfile 
 ## OUTPUT
+```
+Hello world
+hello world
+```
 
 
 
 egrep '(World$)' newfile 
 ## OUTPUT
+```
+Linux is best in this World
+```
 
 
 egrep '((W|w)orld$)' newfile 
 ## OUTPUT
+```
+Hello world
+hello world
+Linux is best in this World
+```
+
 
 
 
 egrep '[1-9]' newfile 
 ## OUTPUT
+```
+Linux is world number 1
+```
 
 
 
 egrep 'Linux.*world' newfile 
 ## OUTPUT
+```
+Linux is world number 1
+```
 
 
 egrep 'Linux.*World' newfile 
 ## OUTPUT
+```
+Linux is best in this World
+```
 
 
 egrep l{2} newfile
 ## OUTPUT
+```
+Hello world
+hello world
+```
+
 
 
 
 egrep 's{1,2}' newfile
-## OUTPUT 
+## OUTPUT
+```
+Linux is world number 1
+Unix is predecessor
+Linux is best in this World
+```
+
 
 
 cat > file23
