@@ -464,8 +464,13 @@ seq 10 | sed -n '4,6p'
 
 
 
-seq 10 | sed -n '2,~4p'
+seq 10 | sed -n '2,4p'
 ## OUTPUT
+```
+2
+3
+4
+```
 
 
 
