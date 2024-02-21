@@ -597,11 +597,21 @@ www. mrcet.... com
  ```
 cat urllist.txt | tr -d ' '
  ## OUTPUT
+ ```
+www.yahoo.com
+www.google.com
+www.mrcet....com
+```
 
 
  
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
+```
+www.yahoo.com
+www.google.com
+www.mrcet.com
+```
 
 
 
